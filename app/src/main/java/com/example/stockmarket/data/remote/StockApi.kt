@@ -1,4 +1,5 @@
 package com.example.stockmarket.data.remote
+import com.example.stockmarket.data.remote.dto.CompanyInfoDto
 import okhttp3.ResponseBody
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -16,14 +17,14 @@ interface StockApi {
         @Query("apikey") apiKey: String = API_KEY
     ): ResponseBody
 
-//    @GET("query?function=OVERVIEW")
-//    suspend fun getCompanyInfo(
-//        @Query("symbol") symbol: String,
-//        @Query("apikey") apiKey: String = API_KEY
-//    ): CompanyInfoDto
+    @GET("query?function=OVERVIEW")
+    suspend fun getCompanyInfo(
+        @Query("symbol") symbol: String,
+        @Query("apikey") apiKey: String = API_KEY
+    ):  CompanyInfoDto
 
     companion object {
-        const val API_KEY = "G1USXWKX272RK4BP"
+        const val API_KEY = "4WPAIEYJQZK6ESGA"
         const val BASE_URL = "https://alphavantage.co"
     }
 }
